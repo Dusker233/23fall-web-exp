@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实验 4-4</title>
+    <style type="text/css">
+        #container {
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            /*border: 1px solid black;*/
+        }
+        h1 {
+            text-align: center;
+            align-items: center;
+        }
+        .s {
+            color: blue;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>禚文宇课表</h1>
+        <table style="margin-left: 450px; align-content: center; width: 1000px;">
+            <tr>
+                <td style="width: 80px; vertical-align:top;">
+                    <table>
+                        <tr><td><button onclick="Click(0)">全周</button></td></tr>
+                        <tr><td><button onclick="Click(1)">周一</button></td></tr>
+                        <tr><td><button onclick="Click(2)">周二</button></td></tr>
+                        <tr><td><button onclick="Click(3)">周三</button></td></tr>
+                        <tr><td><button onclick="Click(4)">周四</button></td></tr>
+                        <tr><td><button onclick="Click(5)">周五</button></td></tr>
+                        <tr><td><button onclick="Click(6)">周六</button></td></tr>
+                        <tr><td><button onclick="Click(7)">周日</button></td></tr>
+                    </table>
+                </td>
+                <td style="width: 800px; height: 700px; vertical-align:top;">
+                    <table id="lesson" style="width: 800px; border: 1px solid">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        let head = [
+            '周', '课程名', '节次', '教室', '教师'
+        ];
+        let num = [
+            '一', '二', '三', '四', '五', '六', '日'
+        ];
+        let day = [
+            [
+                ['计算机网络<br>1-9 周', '5-6', '商学院 551', '刘猛']
+            ],
+            [
+                ['计算机网络<br>1-18 周', '1-2', '电子楼 301', '刘猛']
+            ],
+            [
+                ['主流数据库应用<br>1-18 周', '1-2', '商学院 351', '衣振萍'],
+                ['Web 技术<br>1-9 周', '7-8', '商学院 551', '刘猛'],
+                ['美食鉴赏与食品创新设计<br>1-17 周', '9-10', '商学院 453', '叶萌祺']
+            ],
+            [
+                ['计算机网络<br>1-18 周', '1-2', '商学院 348', '刘猛'],
+                ['嵌入式系统<br>1-18 周', '5-6', '商学院 451', '吕强'],
+                ['植物保护创新原理与国家生物安全<br>1-16 周', '9-10', '图西教学楼 208', '刘洪展']
+            ],
+            [
+                ['形势与政策<br>5-8 周', '3-4', '商学院 153', '王萧涵']
+            ],
+            [],
+            []
+        ];
+        function Click(index) {
+            let thead = document.querySelector("#lesson thead");
+            let tbody = document.querySelector("#lesson tbody");
+            thead.innerHTML = '';
+            tbody.innerHTML = '';
+            if(index === 0) {
+                let tr = document.createElement("tr");
+                for(i = 0;i < head.length;i++) {
+                    let th = document.createElement("th");
+                    th.innerHTML = head[i];
+                    th.style.border = "1px solid";
+                    tr.appendChild(th);
+                }
+                thead.appendChild(tr);
+                for(i = 0;i < day.length;i++) {
+                    for(j = 0;j < day[i].length;j++) {
+                        let tr = document.createElement("tr");
+                        let td = document.createElement("td");
+                        td.innerHTML = num[i];
+                        td.style.border = "1px solid";
+                        tr.appendChild(td);
+                        for(k = 0;k < day[i][j].length;k++) {
+                            let td = document.createElement("td");
+                            td.innerHTML = day[i][j][k];
+                            td.style.border = "1px solid";
+                            tr.appendChild(td);
+                        }
+                        tr.style.textAlign = "center";
+                        tr.style.border = "1px solid";
+                        tbody.appendChild(tr);
+                    }
+                }
+                return;
+            }
+            let tr = document.createElement("tr");
+            for(i = 1;i < head.length;i++) {
+                let th = document.createElement("th");
+                th.innerHTML = head[i];
+                th.style.border = "1px solid";
+                tr.appendChild(th);
+            }
+            thead.appendChild(tr);
+            for(i = 0;i < day.length;i++) {
+                if(i === index - 1) {
+                    for(j = 0;j < day[i].length;j++) {
+                        let tr = document.createElement("tr");
+                        for(k = 0;k < day[i][j].length;k++) {
+                            let td = document.createElement("td");
+                            td.innerHTML = day[i][j][k];
+                            td.style.border = "1px solid";
+                            tr.appendChild(td);
+                        }
+                        tr.style.textAlign = "center";
+                        tr.style.border = "1px solid";
+                        tbody.appendChild(tr);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实验 3-1</title>
+    <style type="text/css">
+        #div1 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 900px;
+            width: 1200px;
+            margin: auto;
+            scroll-behavior: smooth;
+        }
+        #div2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        #div3 {
+            position: absolute;
+            left: 30px;
+            align-items: center;
+        }
+        #div4 {
+            position: absolute;
+            left: 600px;
+            bottom: 30px;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            align-items: center;
+        }
+        iframe {
+            position: absolute;
+            width: 800px;
+            height: 700px;
+            left: 200px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <h1>禚文宇课表</h1>
+            <div id="div3">
+                <p><a href="all.html" target="chart">全周</a></p>
+                <p><a href="mon.html" target="chart">周一</a></p>
+                <p><a href="tue.html" target="chart">周二</a></p>
+                <p><a href="wed.html" target="chart">周三</a></p>
+                <p><a href="thu.html" target="chart">周四</a></p>
+                <p><a href="fri.html" target="chart">周五</a></p>
+                <p><a href="sat.html" target="chart">周六</a></p>
+                <p><a href="sun.html" target="chart">周日</a></p>
+            </div>
+            <iframe name="chart" frameborder="0"></iframe>
+            <div id="div4">
+                <p><a href="../index.html">返回</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
