@@ -1,0 +1,53 @@
+>>> # retrieve the course from the database
+>>> # when index = 0 means to retrieve all
+>>> # other means to retrieve the day of the week corresponding to index
+>>> from crud import retrieve
+>>> retrieve(0)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+(1, 1, 'Web 技术', '1-9 周', '5-6', '商学院 551', '刘猛')
+(2, 2, '计算机网络', '1-18 周', '1-2', '电子楼 301', '刘猛')
+(3, 3, '主流数据库应用', '1-18 周', '1-2', '商学院 351', '衣振萍')
+(4, 3, 'Web 技术', '1-9 周', '7-8', '商学院 551', '刘猛')
+(5, 3, '美食鉴赏与食品创新设计', '1-17 周', '9-10', '商学院 453', '叶萌祺')
+(6, 4, '计算机网络', '1-18 周', '1-2', '商学院 348', '刘猛')
+(7, 4, '嵌入式系统', '1-18 周', '5-6', '商学院 451', '吕强')
+(8, 4, '植物保护创新原理与国家生物安全', '1-16 周', '9-10', '图西教学楼 208', '刘洪展')
+(9, 5, '形势与政策', '5-8 周', '3-4', '商学院 153', '王萧涵')
+9
+
+>>> retrieve(1)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+(1, 1, 'Web 技术', '1-9 周', '5-6', '商学院 551', '刘猛')
+1
+
+>>> retrieve(2)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+(2, 2, '计算机网络', '1-18 周', '1-2', '电子楼 301', '刘猛')
+1
+
+>>> retrieve(3)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+(3, 3, '主流数据库应用', '1-18 周', '1-2', '商学院 351', '衣振萍')
+(4, 3, 'Web 技术', '1-9 周', '7-8', '商学院 551', '刘猛')
+(5, 3, '美食鉴赏与食品创新设计', '1-17 周', '9-10', '商学院 453', '叶萌祺')
+3
+
+>>> retrieve(4)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+(6, 4, '计算机网络', '1-18 周', '1-2', '商学院 348', '刘猛')
+(7, 4, '嵌入式系统', '1-18 周', '5-6', '商学院 451', '吕强')
+(8, 4, '植物保护创新原理与国家生物安全', '1-16 周', '9-10', '图西教学楼 208', '刘洪展')
+3
+
+>>> retrieve(5)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+(9, 5, '形势与政策', '5-8 周', '3-4', '商学院 153', '王萧涵')
+1
+
+>>> retrieve(6)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+0
+
+>>> retrieve(7)
+['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
+0
