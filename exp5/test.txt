@@ -1,7 +1,7 @@
+>>> from crud import create, update, delete, retrieve
 >>> # retrieve the course from the database
 >>> # when index = 0 means to retrieve all
 >>> # other means to retrieve the day of the week corresponding to index
->>> from crud import retrieve
 >>> retrieve(0)
 ['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
 (1, 1, 'Web 技术', '1-9 周', '5-6', '商学院 551', '刘猛')
@@ -51,3 +51,18 @@
 >>> retrieve(7)
 ['id', 'week', 'name', 'duration', 'section', 'classroom', 'teacher']
 0
+
+>>> create()
+insert into courses (id,week,name,duration,section,classroom,teacher) values (?,?,?,?,?,?,?) 
+[(10, 6, 'pysqlite', '8-8 周', '7-8', '知行南楼 408', '<NAME>')]
+
+>>> update()
+[(10, 6, 'pysqlite', '8-8 周', '7-8', '知行南楼 408', '<NAME>')]
+['id']
+update courses set week='7',section='9-10' where id='10'
+[(10, 7, 'pysqlite', '8-8 周', '9-10', '知行南楼 408', '<NAME>')]
+
+>>> delete()
+[(10, 7, 'pysqlite', '8-8 周', '9-10', '知行南楼 408', '<NAME>')]
+delete from courses where id=?
+[]
