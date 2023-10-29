@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>show1</title>
+        <style type="text/css">
+            tr, td {
+                border: solid 1px black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" action="/show2">
+            <input type="text" name="num" id="num" />
+            <input type="submit" value="提交" />
+        </form>
+        <table>
+            {% for row in data %}
+            <tr>
+                {% for col in row %}
+                <td>{{ col }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

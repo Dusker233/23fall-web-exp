@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>课程表</title>
+        <style type="text/css">
+            table, tr, td {
+                border: solid 1px black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" action="/">
+            <select id="day" name="day">
+                {% for day in days %}
+                <option value="{{ day[0] }}">{{ day[1] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="提交" />
+        </form>
+        <table>
+            {% for row in data %}
+            <tr>
+                {% for col in row %}
+                <td>{{ col }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
