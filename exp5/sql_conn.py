@@ -30,7 +30,7 @@ class DataBase:
     def selectAll(self, table):
         conn = self.Open()
         cur = conn.cursor()
-        sql = "select * from %s" % table
+        sql = "select * from '%s'" % table
         # print(sql)
         cur.execute(sql)
 
@@ -48,10 +48,10 @@ class DataBase:
         cur = conn.cursor()
         values = []
         for i in range(len(id)):
-            values.append("%s='%s'" % (id[i], value[i]))
-        sql = "select * from %s where %s" % (table, ' and '.join(values))
+            values.append("%s=?" % id[i])
+        sql = "select * from '%s' where %s" % (table, ' and '.join(values))
         # print(sql)
-        cur.execute(sql)
+        cur.execute(sql, value)
 
         description = []
         for d in cur.description:

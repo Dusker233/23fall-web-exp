@@ -81,6 +81,30 @@
         const introduction = document.getElementById('introduction').value;
 
         // 1. 正确的登录密码长度为 6-16 位，仅可用英文、数字、特殊字符
+        // if(password.length < 6 || password.length > 16) {
+        //     alert('123');
+        //     document.getElementById('userForm').reset();
+        //     return;
+        // }
+        // let typeEng = 0;
+        // let typeNum = 0;
+        // let typeSpe = 0;
+        // for(let char of password) {
+        //     if((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'z')) {
+        //         typeEng = 1;
+        //     }
+        //     if(char >= '0' && char <= '9') {
+        //         typeNum = 1;
+        //     }
+        //     if(char === '!' || char === '@') {
+        //         typeSpe = 1;
+        //     }
+        // }
+        // if(typeEng + typeNum + typeSpe != 3) {
+        //     alert('正确的登录密码长度为 6-16 位，仅可用英文、数字、特殊字符');
+        //     document.getElementById('userForm').reset();
+        //     return;
+        // }
         const passwordReg = /^[a-zA-Z0-9!@#$%^&*.,()-_=+]{6,16}$/;
         if(!passwordReg.test(password)) {
             alert('正确的登录密码长度为 6-16 位，仅可用英文、数字、特殊字符');
@@ -136,6 +160,7 @@
             return;
         }
         // 10. 用户名由 a～z 的英文字母(不区分大小写)、0～9 的数字、点、减号或下划线组成，长度为 3～18 个字符，只能以数字或字母开头和结尾
+        // 或如 1 注释中拆位处理
         const usernameReg = /^[a-zA-Z0-9][a-zA-Z0-9_.-]{1,16}[a-zA-Z0-9]$/;
         if(!usernameReg.test(username)) {
             alert('用户名由 a～z 的英文字母(不区分大小写)、0～9 的数字、点、减号或下划线组成，长度为 3～18 个字符，只能以数字或字母开头和结尾');
